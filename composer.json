@@ -25,7 +25,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Themsaid\\Langman\\": "src"
+            "Arshohag\\Langman\\": "src"
         },
         "classmap": [
             "tests"
@@ -34,7 +34,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Themsaid\\Langman\\LangmanServiceProvider"
+                "Arshohag\\Langman\\LangmanServiceProvider"
             ]
         }
     }
