@@ -1,7 +1,7 @@
 <?php
 
 use Mockery as m;
-use Themsaid\Langman\Manager;
+use Arshohag\Langman\Manager;
 
 class TransCommandTest extends TestCase
 {
@@ -13,7 +13,7 @@ class TransCommandTest extends TestCase
         ]);
 
         $manager = $this->app[Manager::class];
-        $command = m::mock('\Themsaid\Langman\Commands\TransCommand[ask]', [$manager]);
+        $command = m::mock('\Arshohag\Langman\Commands\TransCommand[ask]', [$manager]);
         $command->shouldReceive('ask')->once()->with(m::pattern('/users:en/'), null)->andReturn('test');
         $command->shouldReceive('ask')->once()->with(m::pattern('/users:nl/'), null)->andReturn('otherwise');
 
@@ -39,7 +39,7 @@ class TransCommandTest extends TestCase
     {
         $this->createTempFiles();
         $manager = $this->app[Manager::class];
-        $command = m::mock('\Themsaid\Langman\Commands\TransCommand[confirm]', [$manager]);
+        $command = m::mock('\Arshohag\Langman\Commands\TransCommand[confirm]', [$manager]);
         $command->shouldReceive('confirm')->once()->andReturn(false);
 
         $this->app['artisan']->add($command);
@@ -53,7 +53,7 @@ class TransCommandTest extends TestCase
         ]);
 
         $manager = $this->app[Manager::class];
-        $command = m::mock('\Themsaid\Langman\Commands\TransCommand[confirm]', [$manager]);
+        $command = m::mock('\Arshohag\Langman\Commands\TransCommand[confirm]', [$manager]);
         $command->shouldReceive('confirm')->once()->andReturn(true);
 
         $this->app['artisan']->add($command);
@@ -67,7 +67,7 @@ class TransCommandTest extends TestCase
         $this->createTempFiles(['en' => []]);
 
         $manager = $this->app[Manager::class];
-        $command = m::mock('\Themsaid\Langman\Commands\TransCommand[confirm]', [$manager]);
+        $command = m::mock('\Arshohag\Langman\Commands\TransCommand[confirm]', [$manager]);
         $command->shouldReceive('confirm')->once()->andReturn(false);
 
         $this->app['artisan']->add($command);
@@ -81,7 +81,7 @@ class TransCommandTest extends TestCase
         $this->createTempFiles(['en' => []]);
 
         $manager = $this->app[Manager::class];
-        $command = m::mock('\Themsaid\Langman\Commands\TransCommand[confirm]', [$manager]);
+        $command = m::mock('\Arshohag\Langman\Commands\TransCommand[confirm]', [$manager]);
         $command->shouldReceive('confirm')->once()->andReturn(true);
 
         $this->app['artisan']->add($command);
@@ -98,7 +98,7 @@ class TransCommandTest extends TestCase
         ]);
 
         $manager = $this->app[Manager::class];
-        $command = m::mock('\Themsaid\Langman\Commands\TransCommand[ask]', [$manager]);
+        $command = m::mock('\Arshohag\Langman\Commands\TransCommand[ask]', [$manager]);
         $command->shouldReceive('confirm')->never();
         $command->shouldReceive('ask')->once()->with(m::pattern('/users\.name:en/'), null)->andReturn('name');
         $command->shouldReceive('ask')->once()->with(m::pattern('/users\.name:nl/'), null)->andReturn('naam');
@@ -119,7 +119,7 @@ class TransCommandTest extends TestCase
         ]);
 
         $manager = $this->app[Manager::class];
-        $command = m::mock('\Themsaid\Langman\Commands\TransCommand[ask]', [$manager]);
+        $command = m::mock('\Arshohag\Langman\Commands\TransCommand[ask]', [$manager]);
         $command->shouldReceive('ask')->once()->with(m::pattern('/users\.name:en/'), null)->andReturn('name');
         $command->shouldReceive('ask')->once()->with(m::pattern('/users\.name:sp/'), null)->andReturn('naam');
 
@@ -140,7 +140,7 @@ class TransCommandTest extends TestCase
         ]);
 
         $manager = $this->app[Manager::class];
-        $command = m::mock('\Themsaid\Langman\Commands\TransCommand[ask]', [$manager]);
+        $command = m::mock('\Arshohag\Langman\Commands\TransCommand[ask]', [$manager]);
         $command->shouldReceive('confirm')->never();
         $command->shouldReceive('ask')->once()->with(m::pattern('/users\.name:en/'), 'nil')->andReturn('name');
         $command->shouldReceive('ask')->once()->with(m::pattern('/users\.name:nl/'), '')->andReturn('naam');
@@ -162,7 +162,7 @@ class TransCommandTest extends TestCase
         ]);
 
         $manager = $this->app[Manager::class];
-        $command = m::mock('\Themsaid\Langman\Commands\TransCommand[ask]', [$manager]);
+        $command = m::mock('\Arshohag\Langman\Commands\TransCommand[ask]', [$manager]);
         $command->shouldReceive('confirm')->never();
         $command->shouldReceive('ask')->once()->with(m::pattern('/users\.name:en/'), null)->andReturn('name');
 
@@ -181,7 +181,7 @@ class TransCommandTest extends TestCase
         ]);
 
         $manager = $this->app[Manager::class];
-        $command = m::mock('\Themsaid\Langman\Commands\TransCommand[ask]', [$manager]);
+        $command = m::mock('\Arshohag\Langman\Commands\TransCommand[ask]', [$manager]);
         $command->shouldReceive('confirm')->never();
         $command->shouldReceive('ask')->once()->with(m::pattern('/users\.name\.first:en/'), null)->andReturn('name');
         $command->shouldReceive('ask')->once()->with(m::pattern('/users\.name\.first:nl/'), null)->andReturn('naam');
@@ -203,7 +203,7 @@ class TransCommandTest extends TestCase
         ]);
 
         $manager = $this->app[Manager::class];
-        $command = m::mock('\Themsaid\Langman\Commands\TransCommand[ask]', [$manager]);
+        $command = m::mock('\Arshohag\Langman\Commands\TransCommand[ask]', [$manager]);
         $command->shouldReceive('confirm')->never();
         $command->shouldReceive('ask')->once()->with(m::pattern('/users\.name\.first:en/'), null)->andReturn('name');
 

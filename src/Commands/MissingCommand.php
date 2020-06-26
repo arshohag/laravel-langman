@@ -1,10 +1,10 @@
 <?php
 
-namespace Themsaid\Langman\Commands;
+namespace Arshohag\Langman\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
-use Themsaid\Langman\Manager;
+use Arshohag\Langman\Manager;
 
 class MissingCommand extends Command
 {
@@ -25,7 +25,7 @@ class MissingCommand extends Command
     /**
      * The Languages manager instance.
      *
-     * @var \Themsaid\LangMan\Manager
+     * @var \Arshohag\LangMan\Manager
      */
     private $manager;
 
@@ -39,7 +39,7 @@ class MissingCommand extends Command
     /**
      * ListCommand constructor.
      *
-     * @param \Themsaid\LangMan\Manager $manager
+     * @param \Arshohag\LangMan\Manager $manager
      * @return void
      */
     public function __construct(Manager $manager)

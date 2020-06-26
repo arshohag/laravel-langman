@@ -1,6 +1,6 @@
 <?php
 
-use Themsaid\Langman\Manager;
+use Arshohag\Langman\Manager;
 use Mockery as m;
 
 class MissingCommandTest extends TestCase
@@ -21,7 +21,7 @@ class MissingCommandTest extends TestCase
             ],
         ]);
 
-        $command = m::mock('\Themsaid\Langman\Commands\MissingCommand[ask]', [$manager]);
+        $command = m::mock('\Arshohag\Langman\Commands\MissingCommand[ask]', [$manager]);
         $command->shouldReceive('ask')->once()->with(m::pattern('/user\.age:nl/'), null)->andReturn('fill_age');
         $command->shouldReceive('ask')->once()->with(m::pattern('/product\.name:en/'), null)->andReturn('fill_name');
         $command->shouldReceive('ask')->once()->with(m::pattern('/product\.color:nl/'), null)->andReturn('fill_color');
@@ -57,7 +57,7 @@ class MissingCommandTest extends TestCase
             'nl' => [ '-json' => ['String 3'=>'Tiero']],
         ]);
 
-        $command = m::mock('\Themsaid\Langman\Commands\MissingCommand[ask]', [$manager]);
+        $command = m::mock('\Arshohag\Langman\Commands\MissingCommand[ask]', [$manager]);
         $command->shouldReceive('ask')->once()->with(m::pattern('/String 1:nl/'), null)->andReturn('fill_age');
         $command->shouldReceive('ask')->once()->with(m::pattern('/String 2:nl/'), null)->andReturn('fill_name');
         $command->shouldReceive('ask')->once()->with(m::pattern('/String 3:en/'), null)->andReturn('fill_color');
@@ -88,7 +88,7 @@ class MissingCommandTest extends TestCase
             ],
         ]);
 
-        $command = m::mock('\Themsaid\Langman\Commands\MissingCommand[ask]', [$manager]);
+        $command = m::mock('\Arshohag\Langman\Commands\MissingCommand[ask]', [$manager]);
         $command->shouldReceive('ask')->once()->with(m::pattern('/<fg=yellow>user\.age:nl<\/> translation/'), 'en:Age');
 
         $this->app['artisan']->add($command);
@@ -111,7 +111,7 @@ class MissingCommandTest extends TestCase
             ],
         ]);
 
-        $command = m::mock('\Themsaid\Langman\Commands\MissingCommand[ask]', [$manager]);
+        $command = m::mock('\Arshohag\Langman\Commands\MissingCommand[ask]', [$manager]);
         $command->shouldReceive('ask')->once()->with(m::pattern('/<fg=yellow>user\.age:nl<\/> translation/'), null);
 
         $this->app['artisan']->add($command);

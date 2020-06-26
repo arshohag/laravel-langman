@@ -7,7 +7,7 @@ class ManagerTest extends TestCase
 {
     public function testFilesMethod()
     {
-        $manager = $this->app[\Themsaid\Langman\Manager::class];
+        $manager = $this->app[\Arshohag\Langman\Manager::class];
 
         $this->createTempFiles([
             'en' => ['user' => '', 'category' => '', "-json"=>[]],
@@ -44,7 +44,7 @@ class ManagerTest extends TestCase
 
     public function testLanguagesMethod()
     {
-        $manager = $this->app[\Themsaid\Langman\Manager::class];
+        $manager = $this->app[\Arshohag\Langman\Manager::class];
 
         $this->createTempFiles([
             'en' => [],
@@ -57,7 +57,7 @@ class ManagerTest extends TestCase
 
     public function testCreateFileIfNotExisting()
     {
-        $manager = $this->app[\Themsaid\Langman\Manager::class];
+        $manager = $this->app[\Arshohag\Langman\Manager::class];
 
         $this->createTempFiles([
             'en' => ["-json"=>[]],
@@ -86,7 +86,7 @@ class ManagerTest extends TestCase
 
     public function testWriteFile()
     {
-        $manager = $this->app[\Themsaid\Langman\Manager::class];
+        $manager = $this->app[\Arshohag\Langman\Manager::class];
 
         $this->createTempFiles([
             'en' => ['users' => ''],
@@ -109,7 +109,7 @@ class ManagerTest extends TestCase
 
     public function testWriteJSONFile()
     {
-        $manager = $this->app[\Themsaid\Langman\Manager::class];
+        $manager = $this->app[\Arshohag\Langman\Manager::class];
 
         $this->createTempFiles([
             'en' => ["-json" => []],
@@ -132,7 +132,7 @@ class ManagerTest extends TestCase
 
     public function testGetFileContentReadsContent()
     {
-        $manager = $this->app[\Themsaid\Langman\Manager::class];
+        $manager = $this->app[\Arshohag\Langman\Manager::class];
 
         $values = ["Test1"=>"Value1", 'Test2'=>'Value2'];
         $this->createTempFiles([
@@ -147,7 +147,7 @@ class ManagerTest extends TestCase
 
     public function testGetFileContentThrowsExceptionIfNotFound()
     {
-        $manager = $this->app[\Themsaid\Langman\Manager::class];
+        $manager = $this->app[\Arshohag\Langman\Manager::class];
 
         $this->createTempFiles();
 
@@ -159,7 +159,7 @@ class ManagerTest extends TestCase
 
     public function testGetFileContentCreatesFileIfNeeded()
     {
-        $manager = $this->app[\Themsaid\Langman\Manager::class];
+        $manager = $this->app[\Arshohag\Langman\Manager::class];
 
         $this->createTempFiles();
 
@@ -172,7 +172,7 @@ class ManagerTest extends TestCase
 
     public function testRemoveTranslationLineFromAllFiles()
     {
-        $manager = $this->app[\Themsaid\Langman\Manager::class];
+        $manager = $this->app[\Arshohag\Langman\Manager::class];
 
         $this->createTempFiles([
             'en' => ['users' => "<?php return ['name'=> 'a', 'age' => 'b'];"],
@@ -192,7 +192,7 @@ class ManagerTest extends TestCase
 
     public function testRemoveTranslationLineFromJSONFiles()
     {
-        $manager = $this->app[\Themsaid\Langman\Manager::class];
+        $manager = $this->app[\Arshohag\Langman\Manager::class];
 
         $this->createTempFiles([
             'en' => ['-json' => ['String 1'=>'Trans 1', 'String 2'=>'Trans 2']],
@@ -212,7 +212,7 @@ class ManagerTest extends TestCase
 
     public function testRemoveNestedTranslationLineFromAllFiles()
     {
-        $manager = $this->app[\Themsaid\Langman\Manager::class];
+        $manager = $this->app[\Arshohag\Langman\Manager::class];
 
         $this->createTempFiles([
             'en' => ['users' => "<?php return ['name'=> ['f' => '1', 's' => 2], 'age' => 'b'];"],
@@ -234,7 +234,7 @@ class ManagerTest extends TestCase
 
     public function testFillTranslationLinesThatDoesNotExistYet()
     {
-        $manager = $this->app[\Themsaid\Langman\Manager::class];
+        $manager = $this->app[\Arshohag\Langman\Manager::class];
 
         $this->createTempFiles([
             'en' => ['users' => '<?php return [];'],
@@ -252,7 +252,7 @@ class ManagerTest extends TestCase
 
     public function testFillJSONTranslationLinesThatDoesNotExistYet()
     {
-        $manager = $this->app[\Themsaid\Langman\Manager::class];
+        $manager = $this->app[\Arshohag\Langman\Manager::class];
 
         $this->createTempFiles([
             'en' => ['-json' => []],
@@ -270,7 +270,7 @@ class ManagerTest extends TestCase
 
     public function testUpdatesTranslationLineThatExists()
     {
-        $manager = $this->app[\Themsaid\Langman\Manager::class];
+        $manager = $this->app[\Arshohag\Langman\Manager::class];
 
         $this->createTempFiles([
             'en' => ['users' => "<?php return ['name' => 'nil'];"],
@@ -285,7 +285,7 @@ class ManagerTest extends TestCase
 
     public function testUpdatesJSONTranslationLineThatExists()
     {
-        $manager = $this->app[\Themsaid\Langman\Manager::class];
+        $manager = $this->app[\Arshohag\Langman\Manager::class];
 
         $enval = ['String 1'=>'Test 1', 'String 2'=>'Test 2'];
         $nlval = ['String 1'=>'Hola 1', 'String 2'=>'Hola 2'];
@@ -306,7 +306,7 @@ class ManagerTest extends TestCase
 
     public function testFillNestedTranslationLines()
     {
-        $manager = $this->app[\Themsaid\Langman\Manager::class];
+        $manager = $this->app[\Arshohag\Langman\Manager::class];
 
         $this->createTempFiles([
             'en' => ['users' => '<?php return ["class" => "class"];'],
@@ -325,7 +325,7 @@ class ManagerTest extends TestCase
 
     public function testFindTranslationsInProjectFiles()
     {
-        $manager = $this->app[\Themsaid\Langman\Manager::class];
+        $manager = $this->app[\Arshohag\Langman\Manager::class];
 
         array_map('unlink', glob(__DIR__.'/views_temp/users/index.blade.php'));
         array_map('rmdir', glob(__DIR__.'/views_temp/users'));
@@ -395,7 +395,7 @@ HEREDOC
 
     public function testGetKeysExistingInALanguageButNotTheOther()
     {
-        $manager = m::mock('Themsaid\Langman\Manager[languages]', [new Filesystem(), '', []]);
+        $manager = m::mock('Arshohag\Langman\Manager[languages]', [new Filesystem(), '', []]);
 
         $manager->shouldReceive('languages')->andReturn(['en', 'nl']);
 
