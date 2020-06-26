@@ -1,8 +1,8 @@
 {
-    "name": "themsaid/laravel-langman",
+    "name": "arshohag/laravel-langman",
     "description": "Manage language files with ease.",
     "keywords": ["laravel", "localization", "multilingual"],
-    "homepage": "https://github.com/themsaid/laravel-langman",
+    "homepage": "https://github.com/arshohag/laravel-langman",
     "license": "MIT",
     "authors": [
         {

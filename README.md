@@ -5,6 +5,9 @@ Langman is a language files manager in your artisan console, it helps you search
 translation lines with ease. Taking care of a multilingual interface is not a headache anymore.
 <br>
 <br>
+Added support for laravel 6 & 7.
+<br>
+<br>
 
 <img src="http://s16.postimg.org/mghfe2v3p/ezgif_com_optimize.gif" alt="Laravel Langman">
 <br>
